@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run Micromouse GUI",
+      "request": "launch",
+      "mainClass": "mazechallenge.Main",
+      "classPaths": [
+        "${workspaceFolder}/lib/micromouse-framework.jar",
+        "${workspaceFolder}/out"
+      ],
+      "args": "student.StudentSolverImpl",
+      "preLaunchTask": "Compile Solver"
+    }
+  ]
+}

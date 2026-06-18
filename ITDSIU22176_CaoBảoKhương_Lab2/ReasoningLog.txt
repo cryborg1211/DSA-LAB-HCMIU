@@ -1,0 +1,33 @@
+Reasoning Log - Mock Interviews
+
+Problem: EX2 - Compare Advanced Sorts
+- Clarify: Evaluate Merge Sort vs Quick Sort on different datasets considering comparisons, swaps, and max recursion depth.
+- Approaches: 
+  1. Base implementations scattered in main logic.
+  2. Implement an instrumentation class passed throughout sorted recursive calls securely.
+- Chosen Approach: Create a `SortInstrumentation` wrapper object. This allows decoupled scaling.
+- Tests Used: Random (size 1000), Sorted (size 1000), Reverse (size 1000), Duplicates (size 1000).
+- Complexity: Merge Sort O(N log N) consistently. Quick Sort O(N log N) average, but with Median of Three handles sorted/reverse cleanly, preventing O(N^2) degradation on them. Space: Merge Sort O(N) auxiliary, Quick Sort O(log N) stack.
+
+Problem: EX4 - De-duplicate a Contact List
+- Clarify: Remove duplicate integers from a singly linked list in-place if possible, keeping first appearances.
+- Approaches:
+  1. Extra Memory (HashSet): Keep track of seen IDs. Slow/Fast pointer to skip seen. O(N) Time, O(N) Space.
+  2. Nested Loops: For each node, scan the rest of the list for duplicates and remove them. O(N^2) Time, O(1) Space.
+- Chosen Approach: Both implemented, HashSet chosen as main execution due to significantly better execution performance in typical software applications prioritizing time over memory.
+- Tests Used: Small lists with repeated numbers [5, 1, 5, 2, 1].
+
+Problem: EX6 - Stable Partition
+- Clarify: Given x, group all values < x before values >= x maintaining original relative order.
+- Approaches: 
+  1. Extract to array, partition there, rebuild list. (Poor memory scaling).
+  2. Create two new placeholder lists (lessHead, greaterHead) and append elements respectively.
+- Chosen Approach: Dual-list approach. It achieves O(N) Time and O(1) extra space (only pointers used).
+- Difficulties: Required manually terminating the combined `greaterTail` by explicitly setting `greaterTail.next = null` to avoid infinite loops when merging.
+
+Problem: EX8 - Detect and Fix a Cycle
+- Clarify: Identify cycle, locate entry point, modify next pointer to break it.
+- Approaches:
+  1. Extra Memory: Use a HashSet to track seen nodes. First repeat is the start. O(N) Space.
+  2. Floyd's Tortoise and Hare: O(1) Space with slow and fast pointers mathematically identifying cycle entry based on collision offset.
+- Chosen Approach: Floyd's approach is implemented as the primary method to prevent large memory overhead in production implementations, though Hash map is formally offered for API variance.

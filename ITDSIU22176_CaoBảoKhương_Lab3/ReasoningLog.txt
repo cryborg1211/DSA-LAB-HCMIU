@@ -1,0 +1,27 @@
+Reasoning Log - Lab 3
+Student: Cao Bao Khuong (ITDSIU22176)
+
+--- Part A: Guided Practice ---
+
+A1: Pattern Identification
+1. Two Sum II: Two Pointers (Opposite direction). Input is sorted, pointers move inward to find target sum.
+2. Max Sum Subarray (k): Fixed Sliding Window. Contiguous segment of size k can be updated by adding one element and removing one.
+3. Longest Substring No Repeat: Variable Sliding Window. Maintain a window of unique characters; shrink when a duplicate is found.
+4. Move Zeroes: Two Pointers (Same direction). One pointer traverses, another tracks the position for the next non-zero element.
+5. Container With Most Water: Two Pointers (Opposite direction). Strategic movement from both ends allows finding the max area in O(n).
+6. Min Length Subarray Sum: Variable Sliding Window. Expand to find a valid sum, then shrink to find the minimum length.
+
+A2: Explain the Invariant
+- Two Sum II: Left and Right pointers always bound the possible solution space. If sum < target, indices smaller than 'left' cannot contribute.
+- Max Sum Subarray (size k): The window always contains exactly k elements. Moving the window maintains the sum by adding the new element and subtracting the one that left.
+- Longest Substring No Repeat: The window defined by [left, right] always contains unique characters. We shrink the window from the left until the invariant is restored.
+
+A3: Brute Force vs. Optimized
+- Two Sum II: Brute force uses nested loops O(n^2) to check all pairs. Optimized O(n) uses two pointers, leveraging the sorted property to exclude impossible pairs.
+- Min length Subarray Sum: Brute force checks every possible subarray O(n^2). Optimized Sliding Window O(n) expands and shrinks a single window, visiting each element twice at most.
+
+--- Part D1: Recognition Reflection ---
+
+1. Two Pointers Signals: "Sorted array", "Pair/Triplet", "In-place transformation", "Two ends".
+2. Sliding Window Signals: "Contiguous subarray/substring", "Longest/Shortest/Maximum/Minimum segment", "Size k".
+3. Hardest to Classify: Problems with mixed requirements, such as "3Sum" which requires sorting first then Two Pointers. It feels like a multi-step approach rather than a single pattern.

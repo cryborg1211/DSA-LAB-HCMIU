@@ -1,0 +1,119 @@
+﻿=== MergeSort Tests ===
+Testing Merge Sort:
+Original: 5 2 9 1 5 6 
+Sorted:   1 2 5 5 6 9 
+--- MergeSort Statistics ---
+Comparisons: 11
+Swaps/Moves: 29
+Max Recursion Depth: 4
+--------------------------------
+========
+Original: 1 2 3 4 5 
+Sorted:   1 2 3 4 5 
+--- MergeSort Statistics ---
+Comparisons: 7
+Swaps/Moves: 19
+Max Recursion Depth: 4
+--------------------------------
+========
+Original: 9 8 7 6 5 
+Sorted:   5 6 7 8 9 
+--- MergeSort Statistics ---
+Comparisons: 5
+Swaps/Moves: 24
+Max Recursion Depth: 4
+--------------------------------
+========
+=== QuickSort Tests ===
+Testing Quick Sort:
+Original: 5 2 9 1 5 6 
+Sorted:   1 2 5 5 6 9 
+--- QuickSort Statistics ---
+Comparisons: 19
+Swaps/Moves: 11
+Max Recursion Depth: 4
+--------------------------------
+========
+Original: 1 2 3 4 5 
+Sorted:   1 2 3 4 5 
+--- QuickSort Statistics ---
+Comparisons: 15
+Swaps/Moves: 6
+Max Recursion Depth: 3
+--------------------------------
+========
+Original: 9 8 7 6 5 
+Sorted:   5 6 7 8 9 
+--- QuickSort Statistics ---
+Comparisons: 15
+Swaps/Moves: 10
+Max Recursion Depth: 3
+--------------------------------
+========
+=== Exercise 1 ===
+Original:
+(2,10:02,A),(1,10:05,B),(2,10:01,C)
+Sorted:
+(1,10:05,B),(2,10:01,C),(2,10:02,A)
+=== Exercise 2 ===
+--- Comparing Advanced Sorts (N = 1000) ---
+Dataset: Random
+Merge Sort => Comps: 8708, Swaps/Moves: 19337, Depth: 11
+Quick Sort => Comps: 11353, Swaps/Moves: 5316, Depth: 18
+
+Dataset: Already Sorted
+Merge Sort => Comps: 5044, Swaps/Moves: 15020, Depth: 11
+Quick Sort => Comps: 9520, Swaps/Moves: 1022, Depth: 10
+
+Dataset: Reverse Sorted
+Merge Sort => Comps: 4932, Swaps/Moves: 19952, Depth: 11
+Quick Sort => Comps: 15849, Swaps/Moves: 6970, Depth: 21
+
+Dataset: Many Duplicates
+Merge Sort => Comps: 8197, Swaps/Moves: 18580, Depth: 11
+Quick Sort => Comps: 105212, Swaps/Moves: 2991, Depth: 212
+
+=== Exercise 3 ===
+List 1:
+1 -> 3 -> 7 -> null
+List 2:
+2 -> 3 -> 9 -> null
+Merged List:
+1 -> 2 -> 3 -> 3 -> 7 -> 9 -> null
+=== Exercise 4 ===
+Original:
+5 -> 1 -> 5 -> 2 -> 1 -> null
+Deduplicated:
+5 -> 1 -> 2 -> null
+=== Exercise 5 ===
+Original Playlist:
+1 -> 2 -> 3 -> 4 -> 5 -> null
+First Half:
+1 -> 2 -> 3 -> null
+Second Half:
+4 -> 5 -> null
+=== Exercise 6 ===
+Original:
+3 -> 5 -> 8 -> 5 -> 10 -> 2 -> 1 -> null
+Threshold x = 5
+Partitioned:
+3 -> 2 -> 1 -> 5 -> 8 -> 5 -> 10 -> null
+=== Exercise 7 ===
+Original:
+4 -> 2 -> 1 -> 3 -> 4 -> 0 -> null
+Sorted:
+0 -> 1 -> 2 -> 3 -> 4 -> 4 -> null
+=== Exercise 8 ===
+Cycle exists? (Floyd) true
+Cycle exists? (Memory Hash) true
+Cycle entry node value: 3
+Cycle broken.
+Fixed list:
+1 -> 2 -> 3 -> 4 -> 5 -> 6 -> null
+=== Exercise 9 ===
+PUT(1), PUT(2), PUT(3)
+Cache (MRU -> LRU): 3, 2, 1
+GET(1)
+Cache (MRU -> LRU): 1, 3, 2
+PUT(4)
+Cache (MRU -> LRU): 4, 1, 3

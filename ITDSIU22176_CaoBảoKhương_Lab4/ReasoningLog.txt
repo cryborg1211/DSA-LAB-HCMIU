@@ -1,0 +1,19 @@
+Reasoning Log - Lab 4: Prefix Sum and Hashing
+
+1. Initial Analysis:
+   - Prefix Sum is ideal for range queries and subarray sum problems because it converts a subarray sum into a difference of two values.
+   - Hashing is the key to achieving O(N) complexity by storing past cumulative information.
+   - The type of information stored in the hash structure (Existence, Frequency, or First Occurrence) depends on the specific question (existence, count, or max length).
+
+2. Implementation Decisions:
+   - B1: Used a prefix sum array of size N+1 to simplify the P[R] - P[L-1] logic (avoiding out-of-bounds for L=0).
+   - B2/B3: HashSet is sufficient because we only need to know if the sum has appeared before.
+   - B4: HashMap is needed to store frequencies for multiple valid subarrays ending at the same index.
+   - B5: HashMap stores only the first index of each prefix sum to maximize length (currentIdx - firstIdx).
+   - B6: Total sum minus left sum minus current element gives the right sum. O(1) space optimization.
+   - C1: Converting 0s to -1s reduces "Equal 0s and 1s" to "Zero Sum Subarray" problem.
+   - C2: Handling negative remainders in Java (remainder + k) is crucial for correct modulo behavior.
+
+3. Testing:
+   - Created a Runner class with diverse test cases (positive, negative, zero, single element, edge cases).
+   - All tests verified to pass with O(N) complexity (except B1 query which is O(1)).
